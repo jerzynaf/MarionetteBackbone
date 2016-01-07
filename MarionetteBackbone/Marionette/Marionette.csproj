@@ -72,6 +72,7 @@
     <Content Include="assets\js\vendor\spin.jquery.js" />
     <Content Include="assets\js\vendor\spin.js" />
     <Content Include="assets\js\vendor\underscore.js" />
+    <Content Include="indexContact.html" />
     <Content Include="index.html" />
   </ItemGroup>
   <ItemGroup />

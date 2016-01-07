@@ -331,7 +331,7 @@ jQuery.extend = jQuery.fn.extend = function() {
     target = {};
   }
 
-  // extend jQuery itself if only one argument is passed
+  // Extend jQuery itself if only one argument is passed
   if ( length === i ) {
     target = this;
     --i;
@@ -7695,7 +7695,7 @@ function inspectPrefiltersOrTransports( structure, options, originalOptions, jqX
   return inspect( options.dataTypes[ 0 ] ) || !inspected[ "*" ] && inspect( "*" );
 }
 
-// A special extend for ajax options
+// A special Extend for ajax options
 // that takes "flat" options (not to be deep extended)
 // Fixes #9887
 function ajaxExtend( target, src ) {
@@ -9016,7 +9016,7 @@ function propFilter( props, specialEasing ) {
       value = hooks.expand( value );
       delete props[ name ];
 
-      // not quite $.extend, this wont overwrite keys already present.
+      // not quite $.Extend, this wont overwrite keys already present.
       // also - reusing 'index' from above because we have the correct "name"
       for ( index in value ) {
         if ( !( index in props ) ) {
