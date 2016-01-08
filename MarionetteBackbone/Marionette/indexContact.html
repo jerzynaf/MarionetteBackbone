@@ -41,13 +41,9 @@
     <script src="./assets/js/vendor/underscore.js"></script>
     <script src="./assets/js/vendor/backbone.js"></script>
     <script src="./assets/js/vendor/backbone.marionette.js"></script>
-
+    <script src="assets/js/app.js"></script>
     <script type="text/javascript">
-        var ContactManager = new Marionette.Application();
-
-        ContactManager.addRegions({
-            mainRegion: "#main-region"
-        });
+       
 
         ContactManager.Contact = Backbone.Model.extend({
             defaults: {
@@ -79,7 +75,9 @@
 
         ContactManager.ContactCollection = Backbone.Collection.extend({
             model: ContactManager.Contact,
-            comparator: "firstName"
+            comparator: function (item) {
+                return [item.get("firstName"), item.get("lastName")];
+            }
         });
 
         ContactManager.on("start", function () {
@@ -107,6 +105,11 @@
                     firstName: "Bob",
                     lastName: "Brigham",
                     phoneNumber: "555-0163"
+                },
+                {
+                    firstName: "Alice",
+                    lastName: "Tampen",
+                    phoneNumber: "555-9999"
                 },
                 {
                     firstName: "Alice",

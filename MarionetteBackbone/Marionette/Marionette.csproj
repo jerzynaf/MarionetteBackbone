@@ -61,6 +61,7 @@
     <Content Include="assets\css\jquery-ui-1.10.3.custom.css" />
     <Content Include="assets\img\glyphicons-halflings-white.png" />
     <Content Include="assets\img\glyphicons-halflings.png" />
+    <Content Include="assets\js\app.js" />
     <Content Include="assets\js\vendor\backbone.js" />
     <Content Include="assets\js\vendor\backbone.localstorage.js" />
     <Content Include="assets\js\vendor\backbone.marionette.js" />
