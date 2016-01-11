@@ -21,17 +21,6 @@
         <p>Here is static content in the web page. You'll notice that it gets replaced by our app as soon as we start it.</p>
     </div>
 
-    <!--<script type="text/template" id="static-template">
-        <p>This is text that was Rendered by our Marionette app.</p>
-    </script>-->
-    <!--<script type="text/template" id="another-static-template">
-        <p>Text from a different template</p>
-    </script>
-
-    <script type="text/template" id="single-item">
-        <li>One item</li>
-    </script>-->
-
     <script type="text/template" id="contact-list-item">
         <%= firstName %>  <%= lastName %>
     </script>
@@ -43,54 +32,13 @@
     <script src="./assets/js/vendor/backbone.marionette.js"></script>
     <script src="assets/js/app.js"></script>
     <script src="assets/js/entities/contact.js"></script>
+    <script src="assets/js/apps/contacts/list/list_view.js"></script>
     <script type="text/javascript">
 
-
-        //ContactManager.StaticView = Marionette.ItemView.extend({
-        //    template: "#static-template"
-        //});
-
-        ContactManager.ContactItemView = Marionette.ItemView.extend({
-            template: "#contact-list-item",
-            tagName: "li"
-            //events: {
-            //    "click li": "alertPhoneNumber"
-            //},
-
-            //alertPhoneNumber: function () {
-            //    alert(this.model.escape("phoneNumber"));
-            //}
-        });
-
-        ContactManager.ContactsView = Marionette.CollectionView.extend({
-            tagName: "ul",
-            childView: ContactManager.ContactItemView
-        });
-
-
-
         ContactManager.on("start", function () {
-            //var staticView = new ContactManager.StaticView(({
-            //    template: "#single-item",
-            //    tagName: "ul",
-            //    className: "my-class"
-
-            //}));
-            //ContactManager.mainRegion.show(staticView);
-            //    var alice = new ContactManager.Contact(
-            //{
-            //    firstName: "Alice",
-            //    lastName: "Arten",
-            //    //phoneNumber: "555-0184"
-            //});
-
-            //    var aliceView = new ContactManager.ContactItemView({
-            //        model: alice
-            //    });e
-            //ContactManager.mainRegion.show(aliceView);
             var contacts = ContactManager.request("contact:entities");
 
-            var contactsListView = new ContactManager.ContactsView({
+            var contactsListView = new ContactManager.ContactsApp.List.Contacts({
                 collection: contacts
             });
             ContactManager.mainRegion.show(contactsListView);
