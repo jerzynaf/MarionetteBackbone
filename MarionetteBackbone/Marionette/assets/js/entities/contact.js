@@ -50,13 +50,11 @@
       if (contacts === undefined) {
         initializeContacts();
       }
-      console.log("!!");
       return contacts;
     }
   };
 
   ContactManager.reqres.setHandler("contact:entities", function () {
-    console.log("!");
     return API.getContactEntities();
   });
 
