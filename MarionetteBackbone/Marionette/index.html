@@ -88,28 +88,8 @@
             //        model: alice
             //    });e
             //ContactManager.mainRegion.show(aliceView);
-            var contacts = new ContactManager.Entities.ContactCollection([
-                {
-                    firstName: "Bob",
-                    lastName: "Brigham",
-                    phoneNumber: "555-0163"
-                },
-                {
-                    firstName: "Alice",
-                    lastName: "Tampen",
-                    phoneNumber: "555-9999"
-                },
-                {
-                    firstName: "Alice",
-                    lastName: "Arten",
-                    phoneNumber: "555-0184"
-                },
-                {
-                    firstName: "Charlie",
-                    lastName: "Campbell",
-                    phoneNumber: "555-0129"
-                }
-            ]);
+            var contacts = ContactManager.request("contact:entities");
+
             var contactsListView = new ContactManager.ContactsView({
                 collection: contacts
             });

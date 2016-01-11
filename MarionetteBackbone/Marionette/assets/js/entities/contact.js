@@ -21,4 +21,43 @@
     }
   });
 
+  var contacts;
+
+  var initializeContacts = function () {
+    contacts = new Entities.ContactCollection([
+      {
+        id: 1,
+        firstName: "Bob",
+        lastName: "Brigham",
+        phoneNumber: "555-0163"
+      },
+      {
+        id: 2,
+        firstName: "Alice",
+        lastName: "Arten",
+        phoneNumber: "555-0184"
+      },
+      {
+        id: 3,
+        firstName: "Charlie",
+        lastName: "Campbell",
+        phoneNumber: "555-0129"
+      }
+    ]);
+  };
+  var API = {
+    getContactEntities: function () {
+      if (contacts === undefined) {
+        initializeContacts();
+      }
+      console.log("!!");
+      return contacts;
+    }
+  };
+
+  ContactManager.reqres.setHandler("contact:entities", function () {
+    console.log("!");
+    return API.getContactEntities();
+  });
+
 });
