@@ -4,12 +4,14 @@
     tagName: "tr",
     events: {
       "click": "highlightName",
-      "click button": function () {
-        alert("delete button was clicked");
-      }
+      "click button": "deleteClicked"
     },
     highlightName: function () {
       this.$el.toggleClass("warning");
+    },
+    deleteClicked: function () {
+      alert("Delete button was clicked");
+      e.stopPropagation();
     }
   });
 
