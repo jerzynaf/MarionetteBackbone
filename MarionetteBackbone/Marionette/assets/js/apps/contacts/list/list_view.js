@@ -12,7 +12,11 @@
     deleteClicked: function () {
       this.trigger("contact:delete", this.model);
       //e.stopPropagation();
+    },
+    remove: function () {
+      this.$el.fadeOut();
     }
+
   });
 
   List.Contacts = Marionette.CompositeView.extend({
