@@ -14,7 +14,9 @@
       //e.stopPropagation();
     },
     remove: function () {
-      this.$el.fadeOut();
+      this.$el.fadeOut(function () {
+        Marionette.ItemView.prototype.remove.call(self);
+      });
     }
 
   });
@@ -24,6 +26,11 @@
     className: "table table-hover",
     template: "#contact-list",
     childView: List.Contact,
-    childViewContainer: "tbody"
+    childViewContainer: "tbody",
+    onChildviewContactDelete: function () {
+      this.$el.fadeOut(1000, function () {
+        $(this).fadeIn(1000);
+      });
+    }
   });
 })
