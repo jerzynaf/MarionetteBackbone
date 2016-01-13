@@ -62,6 +62,7 @@
     <Content Include="assets\img\glyphicons-halflings-white.png" />
     <Content Include="assets\img\glyphicons-halflings.png" />
     <Content Include="assets\js\app.js" />
+    <Content Include="assets\js\apps\contacts\contact_app.js" />
     <Content Include="assets\js\apps\contacts\list\list_controller.js" />
     <Content Include="assets\js\apps\contacts\list\list_view.js" />
     <Content Include="assets\js\apps\contacts\show\show_controller.js" />
