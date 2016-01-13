@@ -64,6 +64,8 @@
     <Content Include="assets\js\app.js" />
     <Content Include="assets\js\apps\contacts\list\list_controller.js" />
     <Content Include="assets\js\apps\contacts\list\list_view.js" />
+    <Content Include="assets\js\apps\contacts\show\show_controller.js" />
+    <Content Include="assets\js\apps\contacts\show\show_view.js" />
     <Content Include="assets\js\entities\contact.js" />
     <Content Include="assets\js\vendor\backbone.js" />
     <Content Include="assets\js\vendor\backbone.localstorage.js" />

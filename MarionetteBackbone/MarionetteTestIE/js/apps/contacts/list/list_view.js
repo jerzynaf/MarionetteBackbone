@@ -5,7 +5,7 @@
     events: {
       "click": "highlightName",
       "click button.js-delete": "deleteClicked",
-      "click a.js-show": "showClicked"
+      "click button.js-show": "showClicked"
     },
     highlightName: function () {
       this.$el.toggleClass("warning");
@@ -34,6 +34,11 @@
     className: "table table-hover",
     template: "#contact-list",
     childView: List.Contact,
-    childViewContainer: "tbody"
+    childViewContainer: "tbody",
+    //onChildviewContactDelete: function () {
+    //  this.$el.fadeOut(1000, function () {
+    //    $(this).fadeIn(1000);
+    //  });
+    //}
   });
 })

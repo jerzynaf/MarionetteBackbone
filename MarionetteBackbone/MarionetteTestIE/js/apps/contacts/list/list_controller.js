@@ -14,10 +14,6 @@
         console.log("Received childview:contact:show event on model ", model);
       });
 
-      contactsListView.on("childview:contact:show", function(childView, model) {
-        ContactManager.ContactsApp.Show.Controller.showContact(model);
-      });
-
       ContactManager.mainRegion.show(contactsListView);
     }
   }
