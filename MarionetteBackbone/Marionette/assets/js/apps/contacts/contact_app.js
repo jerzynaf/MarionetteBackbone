@@ -21,6 +21,11 @@
     API.listContacts();
   });
 
+  ContactManager.on("contact:show", function(id) {
+    ContactManager.navigate("contacts/" + id);
+    API.showContact(id);
+  });
+
   ContactManager.addInitializer(function () {
     new ContactsApp.Router({
       controller: API
