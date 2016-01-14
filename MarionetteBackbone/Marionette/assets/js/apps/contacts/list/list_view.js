@@ -1,32 +1,35 @@
-﻿ContactManager.module("ContactsApp.List", function (List, ContactManager, Backbone, Marionette, $, _) {
+ContactManager.module("ContactsApp.List", function(List, ContactManager, Backbone, Marionette, $, _){
   List.Contact = Marionette.ItemView.extend({
-    template: "#contact-list-item",
     tagName: "tr",
+    template: "#contact-list-item",
+
     events: {
       "click": "highlightName",
-      "click button.js-delete": "deleteClicked",
-      "click a.js-show": "showClicked"
+      "click td a.js-show": "showClicked",
+      "click button.js-delete": "deleteClicked"
     },
-    highlightName: function () {
+
+    highlightName: function(e){
       this.$el.toggleClass("warning");
     },
-    deleteClicked: function () {
-      this.trigger("contact:delete", this.model);
-      //e.stopPropagation();
-    },
-    remove: function () {
-      this.$el.fadeOut(function () {
-        //Marionette.ItemView.prototype.remove.call(self);
-        $(this).remove();
-      });
-    },
 
-    showClicked: function (e) {
-      this.trigger("contact:show", this.model);
+    showClicked: function(e){
       e.preventDefault();
       e.stopPropagation();
-    }
+      this.trigger("contact:show", this.model);
+    },
 
+    deleteClicked: function(e){
+      e.stopPropagation();
+      this.trigger("contact:delete", this.model);
+    },
+
+    remove: function(){
+      var self = this;
+      this.$el.fadeOut(function(){
+        Marionette.ItemView.prototype.remove.call(self);
+      });
+    }
   });
 
   List.Contacts = Marionette.CompositeView.extend({
@@ -36,4 +39,4 @@
     childView: List.Contact,
     childViewContainer: "tbody"
   });
-})
+});

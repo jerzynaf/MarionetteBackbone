@@ -381,7 +381,7 @@
     Wreqr.EventAggregator = function(Backbone, _) {
       "use strict";
       var EA = function() {};
-      // Copy the `Extend` function used by Backbone's classes
+      // Copy the `extend` function used by Backbone's classes
       EA.extend = Backbone.Model.extend;
       // Copy the basic Backbone.Events on to the event aggregator
       _.extend(EA.prototype, Backbone.Events);
@@ -510,10 +510,10 @@
   // Helpers
   // -------
   
-  // Marionette.Extend
+  // Marionette.extend
   // -----------------
   
-  // Borrow the Backbone `Extend` method so we can use it as needed
+  // Borrow the Backbone `extend` method so we can use it as needed
   Marionette.extend = Backbone.Model.extend;
   
   // Marionette.isNodeAttached
@@ -1008,7 +1008,7 @@
   // Ensure it can trigger events with Backbone.Events
   _.extend(Marionette.Object.prototype, Backbone.Events, {
   
-    //this is a noop method intended to be overridden by classes that Extend from this base
+    //this is a noop method intended to be overridden by classes that extend from this base
     initialize: function() {},
   
     destroy: function() {
@@ -1616,7 +1616,7 @@
   // View
   // ----
   
-  // The core view class that other Marionette views Extend from.
+  // The core view class that other Marionette views extend from.
   Marionette.View = Backbone.View.extend({
     isDestroyed: false,
   
@@ -3212,7 +3212,7 @@
     // Add regions to your app.
     // Accepts a hash of named strings or Region objects
     // addRegions({something: "#someRegion"})
-    // addRegions({something: Region.Extend({el: "#someRegion"}) });
+    // addRegions({something: Region.extend({el: "#someRegion"}) });
     addRegions: function(regions) {
       return this._regionManager.addRegions(regions);
     },
@@ -3508,7 +3508,7 @@
     // ## Module Classes
     //
     // Module classes can be used as an alternative to the define pattern.
-    // The Extend function of a Module is identical to the Extend functions
+    // The extend function of a Module is identical to the extend functions
     // on other Backbone and Marionette classes.
     // This allows module lifecyle events like `onStart` and `onStop` to be called directly.
     getClass: function(moduleDefinition) {
