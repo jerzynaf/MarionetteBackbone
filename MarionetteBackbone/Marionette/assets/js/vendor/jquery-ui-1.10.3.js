@@ -362,7 +362,7 @@ $.widget = function( name, base, prototype ) {
 			this._createWidget( options, element );
 		}
 	};
-	// Extend with the existing constructor to carry over any static properties
+	// extend with the existing constructor to carry over any static properties
 	$.extend( constructor, existingConstructor, {
 		version: prototype.version,
 		// copy the object used to create the prototype in case we need to
@@ -455,7 +455,7 @@ $.widget.extend = function( target ) {
 				if ( $.isPlainObject( value ) ) {
 					target[ key ] = $.isPlainObject( target[ key ] ) ?
 						$.widget.extend( {}, target[ key ], value ) :
-						// Don't Extend strings, arrays, etc. with objects
+						// Don't extend strings, arrays, etc. with objects
 						$.widget.extend( {}, value );
 				// Copy everything else by reference
 				} else {
@@ -8777,7 +8777,7 @@ function bindHover(dpDiv) {
 		});
 }
 
-/* jQuery Extend now ignores nulls! */
+/* jQuery extend now ignores nulls! */
 function extendRemove(target, props) {
 	$.extend(target, props);
 	for (var name in props) {

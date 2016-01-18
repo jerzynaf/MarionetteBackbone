@@ -293,7 +293,7 @@ Backbone.Syphon.TypeRegistry = function(){
   this.registeredTypes = {};
 };
 
-// Borrow Backbone's `Extend` keyword for our TypeRegistry
+// Borrow Backbone's `extend` keyword for our TypeRegistry
 Backbone.Syphon.TypeRegistry.extend = Backbone.Model.extend;
 
 _.extend(Backbone.Syphon.TypeRegistry.prototype, {
